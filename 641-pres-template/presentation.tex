@@ -1,0 +1,51 @@
+%% LaTeX Beamer presentation template (requires beamer package)
+%% see http://latex-beamer.sourceforge.net/
+%% idea contributed by H. Turgut Uyar
+%% template based on a template by Till Tantau
+%% this template is still evolving - it might differ in future releases!
+
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+
+\mode<presentation>
+
+\usepackage{graphicx}
+\usetheme{isu}
+\usepackage{times}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\boldmath
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+
+\DeclareGraphicsExtensions{.pdf,.jpg,.png}
+\graphicspath{{figures/}}
+
+
+\title[SHORT PAPER TITLE HERE]{PAPER TITLE HERE}
+\author[YOUR NAME HERE]{YOUR NAME HERE}
+\institute[ISU]{Department of Computer Science \linebreak Iowa State University\linebreak YOUR EMAIL@iastate.edu}
+
+\date[COMS 641]{COMS 641: Data Intensive Languages and Systems - Design and Semantics}
+%\date{Month X, 20XX}
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+%\pgfdeclareimage[height=0.25cm]{logo}{figures/logo}
+%\logo{\pgfuseimage{logo}}
+
+
+\begin{document}
+  \begin{frame}[plain]
+    \titlepage
+  \end{frame}
+
+  \input{intro}
+  \input{problem}
+  \input{approach}
+  \input{evaluation}
+  \input{summary}
+
+  \input{appendix}
+\end{document}
