@@ -1,0 +1,320 @@
+% Encoding: UTF-8
+
+@InProceedings{gonzalez2012powergraph,
+  author =    { Gonzalez, Joseph E and Low, Yucheng and Gu, Haijie and Bickson, Danny and Guestrin, Carlos },
+  title =     {Powergraph: Distributed graph-parallel computation on natural graphs},
+  booktitle = {The 10th USENIX Symposium on Operating Systems Design and Implementation (OSDI 12)},
+  year =      {2012},
+  pages =     {17--30},
+  abstract =  {
+    Large-scale graph-structured computation is central to tasks ranging from
+    targeted advertising to natural language processing and has led to the
+    development of several graph-parallel abstractions including Pregel and
+    GraphLab. However, the natural graphs commonly found in the real-world have
+    highly skewed power-law degree distributions, which challenge the
+    assumptions made by these abstractions, limiting performance and
+    scalability.
+
+    In this paper, we characterize the challenges of computation on natural
+    graphs in the context of existing graphparallel abstractions. We then
+    introduce the PowerGraph abstraction which exploits the internal structure
+    of graph programs to address these challenges. Leveraging the PowerGraph
+    abstraction we introduce a new approach to distributed graph placement and
+    representation that exploits the structure of power-law graphs. We provide
+    a detailed analysis and experimental evaluation comparing PowerGraph to two
+    popular graph-parallel systems. Finally, we describe three different
+    implementation strategies for PowerGraph and discuss their relative merits
+    with empirical evaluations on large-scale real-world problems demonstrating
+    order of magnitude gains.
+  },
+}
+
+@InProceedings{kang2009pegasus,
+  author =       {Kang, U and Tsourakakis, Charalampos E and Faloutsos, Christos},
+  title =        {Pegasus: A peta-scale graph mining system implementation and observations},
+  booktitle =    {Data Mining, 2009. ICDM'09. Ninth IEEE International Conference on},
+  year =         {2009},
+  organization = {IEEE},
+  pages =        {229--238},
+  abstract =     {
+    In this paper, we describe PEGASUS, an open source peta graph mining
+    library which performs typical graph mining tasks such as computing the
+    diameter of the graph, computing the radius of each node and finding the
+    connected components. as the size of graphs reaches several giga-, tera- or
+    peta-bytes, the necessity for such a library grows too. To the best of our
+    knowledge, PEGASUS is the first such library, implemented on the top of the
+    HADOOP platform, the open source version of MAPREDUCE. Many graph mining
+    operations (PageRank, spectral clustering, diameter estimation, connected
+    components etc.) are essentially a repeated matrix-vector multiplication.
+    In this paper we describe a very important primitive for PEGASUS, called
+    GIM-V (generalized iterated matrix-vector multiplication). GIM-V is highly
+    optimized, achieving (a) good scale-up on the number of available machines
+    (b) linear running time on the number of edges, and (c) more than 5 times
+    faster performance over the non-optimized version of GIM-V. Our experiments
+    ran on M45, one of the top 50 supercomputers in the world. We report our
+    findings on several real graphs, including one of the largest publicly
+    available Web graphs, thanks to Yahoo!, with ~= 6,7 billion edges.
+  },
+}
+
+@InProceedings{kyrola2012graphchi,
+  author =    { Aapo Kyrola and Guy Blelloch and Carlos Guestrin },
+  title =     {GraphChi: Large-Scale Graph Computation on Just a PC},
+  booktitle = {The 10th USENIX Symposium on Operating Systems Design and Implementation (OSDI 12)},
+  year =      {2012},
+  publisher = {USENIX},
+  pages =     {31--46},
+  url =       {https://www.usenix.org/conference/osdi12/technical-sessions/presentation/kyrola},
+  abstract =  {
+    Current systems for graph computation require a distributed computing
+    cluster to handle very large real-world problems, such as analysis on
+    social networks or the web graph. While distributed computational resources
+    have become more accessible, developing distributed graph algorithms still
+    remains challenging, especially to non-experts.
+
+    In this work, we present GraphChi, a disk-based system for computing
+    efficiently on graphs with billions of edges. By using a well-known method
+    to break large graphs into small parts, and a novel parallel sliding
+    windows method, GraphChi is able to execute several advanced data mining,
+    graph mining, and machine learning algorithms on very large graphs, using
+    just a single consumer-level computer. We further extend GraphChi to
+    support graphs that evolve over time, and demonstrate that, on a single
+    computer, GraphChi can process over one hundred thousand graph updates per
+    second, while simultaneously performing computation. We show, through
+    experiments and theoretical analysis, that GraphChi performs well on both
+    SSDs and rotational hard drives.
+
+    By repeating experiments reported for existing distributed systems, we show
+    that, with only fraction of the resources, GraphChi can solve the same
+    problems in very reasonable time. Our work makes large-scale graph
+    computation available to anyone with a modern PC.
+  },
+}
+
+@InProceedings{low2010graphlab,
+  author =    {Yucheng Low and Joseph E. Gonzalez and Aapo Kyrola and Danny Bickson and Carlos Guestrin and Joseph M. Hellerstein},
+  title =     {GraphLab: A New Framework For Parallel Machine Learning},
+  booktitle = {The 26th Conference on Uncertainty in Artificial Intelligence (UAI 2010)},
+  year =      {2010},
+  abstract =  {
+    Designing and implementing efficient, provably correct parallel machine
+    learning (ML) algorithms is challenging. Existing high-level parallel
+    abstractions like MapReduce are insufficiently expressive while low-level
+    tools like MPI and Pthreads leave ML experts repeatedly solving the same
+    design challenges. By targeting common patterns in ML, we developed
+    GraphLab, which improves upon abstractions like MapReduce by compactly
+    expressing asynchronous iterative algorithms with sparse computational
+    dependencies while ensuring data consistency and achieving a high degree of
+    parallel performance. We demonstrate the expressiveness of the GraphLab
+    framework by designing and implementing parallel versions of belief
+    propagation, Gibbs sampling, Co-EM, Lasso and Compressed Sensing. We show
+    that using GraphLab we can achieve excellent parallel performance on large
+    scale real-world problems.
+  },
+}
+
+@Article{low2011graphlab,
+  author =   { Low, Yucheng and Gonzalez, Joseph and Kyrola, Aapo and Bickson, Danny and Guestrin, Carlos },
+  title =    {Graphlab: A distributed framework for machine learning in the cloud},
+  year =     {2011},
+  abstract = {
+    Machine Learning (ML) techniques are indispensable in a wide range of
+    fields. Unfortunately, the exponential increase of dataset sizes are
+    rapidly extending the runtime of sequential algorithms and threatening to
+    slow future progress in ML. With the promise of affordable large-scale
+    parallel computing, Cloud systems offer a viable platform to resolve the
+    computational challenges in ML. However, designing and implementing
+    efficient, provably correct distributed ML algorithms is often
+    prohibitively challenging. To enable ML researchers to easily and
+    efficiently use parallel systems, we introduced the GraphLab abstraction
+    which is designed to represent the computational patterns in ML algorithms
+    while permitting efficient parallel and distributed implementations. In
+    this paper we provide a formal description of the GraphLab parallel
+    abstraction and present an efficient distributed implementation. We conduct
+    a comprehensive evaluation of GraphLab on three state-of-the-art ML
+    algorithms using real large-scale data and a 64 node EC2 cluster of 512
+    processors. We find that GraphLab achieves orders of magnitude performance
+    gains over Hadoop while performing comparably or superior to hand-tuned MPI
+    implementations.
+  },
+  journal =  {arXiv preprint arXiv:1107.0922}
+}
+
+@Article{low2012distributed,
+  author =    { Low, Yucheng and Bickson, Danny and Gonzalez, Joseph and Guestrin, Carlos and Kyrola, Aapo and Hellerstein, Joseph M },
+  title =     {Distributed GraphLab: a framework for machine learning and data mining in the cloud},
+  year =      {2012},
+  volume =    {5},
+  number =    {8},
+  pages =     {716--727},
+  abstract =  {
+    While high-level data parallel frameworks, like MapReduce, simplify the
+    design and implementation of large-scale data processing systems, they do
+    not naturally or efficiently support many important data mining and machine
+    learning algorithms and can lead to inefficient learning systems. To help
+    fill this critical void, we introduced the GraphLab abstraction which
+    naturally expresses asynchronous, dynamic, graph-parallel computation while
+    ensuring data consistency and achieving a high degree of parallel
+    performance in the shared-memory setting. In this paper, we extend the
+    GraphLab framework to the substantially more challenging distributed
+    setting while preserving strong data consistency guarantees.
+
+    We develop graph based extensions to pipelined locking and data versioning
+    to reduce network congestion and mitigate the effect of network latency. We
+    also introduce fault tolerance to the GraphLab abstraction using the
+    classic Chandy-Lamport snapshot algorithm and demonstrate how it can be
+    easily implemented by exploiting the GraphLab abstraction itself. Finally,
+    we evaluate our distributed implementation of the GraphLab abstraction on a
+    large Amazon EC2 deployment and show 1-2 orders of magnitude performance
+    gains over Hadoop-based implementations.
+  },
+  journal =   {Proceedings of the VLDB Endowment},
+  publisher = {VLDB Endowment}
+}
+
+@PhdThesis{low2013graphlab,
+  author =   {Low, Yucheng},
+  title =    {GraphLab: A Distributed Abstraction for Large Scale Machine Learning},
+  year =     {2013},
+  abstract = {
+    Machine Learning methods have found increasing applicability and relevance
+    to the real world, finding applications in a broad range of fields in
+    robotics, data mining, physics and biology, among many others. However,
+    with the growth of the World Wide Web, and with improvements in data
+    collection technology, real world datasets have been rapidly increasing in
+    size and complexity, necessitating comparable scaling of Machine Learning
+    algorithms.
+
+    However, designing and implementing efficient parallel Machine Learning
+    algorithms is challenging. Existing high-level parallel abstractions like
+    MapReduce are insufficiently expressive while low-level tools such as MPI
+    are difficult to use, and leave Machine Learning experts repeatedly solving
+    the same design challenges.
+
+    In this thesis, we trace the development of a framework called GraphLab
+    which aims to provide an expressive and efficient high level abstraction to
+    satisfy the needs of a broad range of Machine Learning algorithms. We
+    discuss the initial GraphLab design, including details of a shared memory
+    and distributed memory implementation. Next, we discuss the scaling
+    limitations of GraphLab on real-world power-law graphs and how that
+    informed the design of PowerGraph. By placing restrictions on the
+    abstraction, we are able to improve scalability, demonstrating state of the
+    art performance on a variety of benchmarks. Finally, we end with the
+    WarpGraph abstraction which improves useability of PowerGraph by combining
+    features of GraphLab and PowerGraph to achieve an abstraction that is easy
+    to use, scalable, and fast.
+
+    We demonstate in this thesis, that by designing a domain specific
+    abstraction for Machine Learning, we are able to provide a system that is
+    both easy to use, and provides exceptional scaling and performance on real
+    world datasets.
+  },
+  school =   {University of California, Berkeley}
+}
+
+@InProceedings{malewicz2010pregel,
+  author =       { Malewicz, Grzegorz and Austern, Matthew H and Bik, Aart JC and Dehnert, James C and Horn, Ilan and Leiser, Naty and Czajkowski, Grzegorz },
+  title =        {Pregel: a system for large-scale graph processing},
+  booktitle =    {Proceedings of the 2010 ACM SIGMOD International Conference on Management of data},
+  year =         {2010},
+  organization = {ACM},
+  pages =        {135--146},
+  abstract =     {
+    Many practical computing problems concern large graphs. Standard examples
+    include the Web graph and various social networks. The scale of these
+    graphs - in some cases billions of vertices, trillions of edges - poses
+    challenges to their efficient processing. In this paper we present a
+    computational model suitable for this task. Programs are expressed as a
+    sequence of iterations, in each of which a vertex can receive messages sent
+    in the previous iteration, send messages to other vertices, and modify its
+    own state and that of its outgoing edges or mutate graph topology. This
+    vertex-centric approach is flexible enough to express a broad set of
+    algorithms. The model has been designed for efficient, scalable and
+    fault-tolerant implementation on clusters of thousands of commodity
+    computers, and its implied synchronicity makes reasoning about programs
+    easier. Distribution-related details are hidden behind an abstract API. The
+    result is a framework for processing large graphs that is expressive and
+    easy to program.
+  },
+}
+
+@InProceedings{power2010piccolo,
+  author =    {Power, Russell and Li, Jinyang},
+  title =     {Piccolo: Building Fast, Distributed Programs with Partitioned Tables.},
+  booktitle = {OSDI},
+  year =      {2010},
+  volume =    {10},
+  pages =     {1--14},
+  abstract =  {
+    Piccolo is a new data-centric programming model for writing parallel
+    in-memory applications in data centers. Unlike existing data-flow models,
+    Piccolo allows computation running on different machines to share
+    distributed, mutable state via a key-value table interface. Piccolo enables
+    efficient application implementations. In particular, applications can
+    specify locality policies to exploit the locality of shared state access
+    and Piccolo's run-time automatically resolves write-write conflicts using
+    user-defined accumulation functions.
+
+    Using Piccolo, we have implemented applications for several problem
+    domains, including the PageRank algorithm, k-means clustering and a
+    distributed crawler. Experiments using 100 Amazon EC2 instances and a 12
+    machine cluster show Piccolo to be faster than existing data flow models
+    for many problems, while providing similar fault-tolerance guarantees and a
+    convenient programming interface.},
+}
+
+@InProceedings{salihoglu2013gps,
+  author =       {Salihoglu, Semih and Widom, Jennifer},
+  title =        {GPS: A graph processing system},
+  booktitle =    {Proceedings of the 25th International Conference on Scientific and Statistical Database Management},
+  year =         {2013},
+  organization = {ACM},
+  pages =        {22},
+  abstract =     {
+    GPS (for Graph Processing System) is a complete open-source system we
+    developed for scalable, fault-tolerant, and easy-to-program execution of
+    algorithms on extremely large graphs. This paper serves the dual role of
+    describing the GPS system, and presenting techniques and experimental
+    results for graph partitioning in distributed graph-processing systems like
+    GPS. GPS is similar to Google's proprietary Pregel system, with three new
+    features: (1) an extended API to make global computations more easily
+    expressed and more efficient; (2) a dynamic repartitioning scheme that
+    reassigns vertices to different workers during the computation, based on
+    messaging patterns; and (3) an optimization that distributes adjacency
+    lists of high-degree vertices across all compute nodes to improve
+    performance. In addition to presenting the implementation of GPS and its
+    novel features, we also present experimental results on the performance
+    effects of both static and dynamic graph partitioning schemes, and we
+    describe the compilation of a high-level domain-specific programming
+    language to GPS, enabling easy expression of complex algorithms.
+  },
+}
+
+@InProceedings{shao2013trinity,
+  author =       {Shao, Bin and Wang, Haixun and Li, Yatao},
+  title =        {Trinity: A distributed graph engine on a memory cloud},
+  booktitle =    {Proceedings of the 2013 ACM SIGMOD International Conference on Management of Data},
+  year =         {2013},
+  organization = {ACM},
+  pages =        {505--516},
+  abstract =     {
+    Computations performed by graph algorithms are data driven, and require a
+    high degree of random data access. Despite the great progresses made in
+    disk technology, it still cannot provide the level of efficient random
+    access required by graph computation. On the other hand, memory-based
+    approaches usually do not scale due to the capacity limit of single
+    machines. In this paper, we introduce Trinity, a general purpose graph
+    engine over a distributed memory cloud. Through optimized memory management
+    and network communication, Trinity supports fast graph exploration as well
+    as efficient parallel computing. In particular, Trinity leverages graph
+    access patterns in both online and offline computation to optimize memory
+    and communication for best performance. These enable Trinity to support
+    efficient online query processing and offline analytics on large graphs
+    with just a few commodity machines. Furthermore, Trinity provides a high
+    level specification language called TSL for users to declare data schema
+    and communication protocols, which brings great ease-of-use for general
+    purpose graph management and computing. Our experiments show Trinity's
+    performance in both low latency graph queries as well as high throughput
+    graph analytics on web-scale, billion-node graphs.
+  },
+}
