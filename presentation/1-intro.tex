@@ -2,24 +2,53 @@
 
 \begin{frame}
 \begin{itemize}
-  \item The Problem
+  \item The Problem: Power Law Graphs are Common
   \begin{itemize}
-    \item % TODO What is the problem we solved
+    \item An imporant class of natural graphs.
+    \item A few \textit{very high-degree vertices}.
+    \item Hard to partition.
+    \item These vertices cause performance and scalability challenges for
+          existing graph-parallel systems.
   \end{itemize}
 
-  \item Our Approach
+  \item Our Approach: The PowerGraph Abstraction
   \begin{itemize}
-    \item % TODO What is our proposed solution to the problem
+    \item \textbf{GAS}: A new 3-phase vertex-program methodology.
+    \item ``Think like a vertex.'' \citep[SIGMOD '10]{malewicz2010pregel}
+    \item Vertex-cut graph partitioning methodology.
+    \item Three execution modes.
   \end{itemize}
 
-  \item Evaluation
+  \item Evaluation: Performance of MLDM Applications
   \begin{itemize}
-    \item % TODO Perhaps overview the evaluation
+    \item Comparison against Pregel (Piccolo) and GraphLab
+    \item Comparison between 3 execution modes.
   \end{itemize}
+\end{itemize}
+\end{frame}
 
-  \item Benefits
+\begin{frame}
+\begin{itemize}
+  \item Benefits:
   \begin{itemize}
-    \item % TODO What are the benefits of our solution
+    \item Vertex-oriented graph programming (``Think Like A Vertex'').
+    \item Handles Large Power Law Graphs.
+    \item Handles Very High-Degree Vertices.
+    \item Scalable.
+    \item Distributable/Parallelizable.
+    \item Fault Tolerant.
   \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some Context\ldots}
+\begin{itemize}
+  \item \cite[OSDI '12 Paper]{gonzalez2012powergraph}
+  \item \cite[OSDI '12 Video]{gonzalez2012powergraph-video}
+  \item Work connected with larger GraphLab project.
+  \item Work primarily done at CMU, but also UW.
+  \item Tech commercialized by Dato, Inc. (GraphLab, Inc.)
+  \item Current open sourced version of tech: SGraph
 \end{itemize}
 \end{frame}
