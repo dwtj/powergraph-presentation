@@ -1,6 +1,84 @@
 \section{The Problem}
 
 \begin{frame}
+  \frametitle{The Problem: Power Law Graphs are Common}
+  \begin{itemize}
+      \item An imporant class of natural graphs.
+      \item A few \textit{very high-degree vertices}.
+      \item Hard to partition.
+      \item These vertices cause performance and scalability challenges for
+            existing graph-parallel systems.
+  \end{itemize}
+\end{frame}
+
+\subsection{Some Background on Power Law Graphs}
+
+\begin{frame}
+    \textbf{Q:} What's a Power Law Graph?
+
+    \textbf{A:} A graph whose vertex degree distribution is a power law
+    distribution.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Power Law Functions Have A Characteristic Shape}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.29]{two_power_law_functions}
+    \caption{Two power law functions ($\alpha = 1.7$ and $\alpha = 2$) on a
+             Cartesian coordinate system. A \textit{power law} is a
+             proportionality relation between two values of the form
+             $y \propto x^{-\alpha}$, where $\alpha$ is positive. A power law
+             \textit{distribution} is just a probability distribution of this
+             form.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Many Natural Graphs Are Power Law Graphs}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.17]{gonzalez_osdi_paper_figure_1}
+    \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{A Small Number of Vertices are of Very High Degree}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.32]{gonzalez_osdi_2012_slide_9}
+    \caption{\cite[OSDI '12 Slides]{gonzalez2012powergraph-slides}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Power Law Graphs Are Hard to Partition}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.30]{gonzalez_osdi_2012_slide_11}
+    \caption{\cite[OSDI '12 Slides]{gonzalez2012powergraph-slides}}
+  \end{figure}
+\end{frame}
+
+
+\subsection{The Challenges of Processing Power Law Graphs}
+
+\begin{frame}
+  \frametitle{Challenges}
+  The authors identify five ways in which these these properties of power law
+  graphs create challenges for pre-existing graph parallel abstractions:
+  \begin{itemize}
+    \item Work Balance
+    \item Partitioning
+    \item Communication
+    \item Storage
+    \item Computation
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
 \begin{itemize}
   \item % TODO What is the problem and why do we care
 \end{itemize}
