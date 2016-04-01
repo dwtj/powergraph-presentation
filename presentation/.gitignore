@@ -8,5 +8,7 @@
 *.snm
 *.toc
 *.nav
+*.fdb_latexmk
+*.fls
 *~
 tmp
