@@ -62,12 +62,55 @@
 \end{frame}
 
 
+\subsection{Some Background on Graph-Parallel Abstractions}
+
+\begin{frame}
+  \frametitle{Graph-Parallel Abstractions (A Review)}
+  ``A graph parallel abstraction consists of a \textit{sparse} graph
+  $G = \{V,E\}$ and a vertex-program $Q$ which is executed in parallel on each
+  vertex $v \in V$ and can interact\ldots with neighboring
+  instances.''\footnote{\cite[OSDI '12]{gonzalez2012powergraph}}
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Graph-Parallel Abstractions (A Review)}
+  ``In contrast to more general message passing models, graph-parallel
+  abstractions constrain the interaction of vertex-program (sic) to a graph
+  structure enabling the optimzation of data-layout and
+  communication.''\footnote{\cite[OSDI '12]{gonzalez2012powergraph}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Graph-Parallel Abstractions Used For Comparison}
+  User-defined vertex programs run in parallel on many nodes:
+  \begin{itemize}
+    \item \textbf{Pregel:}\footnote{\cite[SIGMOD '10]{malewicz2010pregel}}
+      \begin{itemize}
+        \item Programs communicate via message passing along graph.
+        \item Programs can change graph topology.
+        \item Vertices own their state and state of their outgoing edges.
+        \item Consistency via supersteps using a master node.
+      \end{itemize}
+    \item \textbf{GraphLab:}\footnote{\cite[VLDB '12]{low2012distributed}}
+      \begin{itemize}
+        \item Programs read/write shared data on a distributed graph.
+        \item Graph topology is fixed.
+        \item Good concurrency via smart scheduling of programs.
+        \item Serializability via locking and inter-node messages.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
 \subsection{The Challenges of Processing Power Law Graphs}
 
 \begin{frame}
   \frametitle{Challenges}
   The authors identify five ways in which these these properties of power law
-  graphs create challenges for pre-existing graph parallel abstractions:
+  graphs create challenges for optimizations within pre-existing graph parallel
+  abstractions:
   \begin{itemize}
     \item Work Balance
     \item Partitioning
@@ -75,11 +118,4 @@
     \item Storage
     \item Computation
   \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-\begin{itemize}
-  \item % TODO What is the problem and why do we care
-\end{itemize}
 \end{frame}
