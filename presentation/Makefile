@@ -1,20 +1,15 @@
 NAME = presentation
-LATEX = pdflatex
-BIBTEX = bibtex
+LATEXMK = latexmk
 
-# WARNING: Must run latex paper.tex one time before making bbl will work
+# Compile the presentation as a PDF using latexmk.
+pdf:
+	$(LATEXMK) -pdf $(NAME)
 
-all:
-	$(LATEX) $(NAME).tex
-#	$(BIBTEX) $(NAME)
-	$(LATEX) $(NAME).tex
-	$(LATEX) $(NAME).tex
+# Use latexmk's "preview continuous" option, which continually compiles the pdf
+# as changes are saved to the latex files.
+pdf-pvc:
+	$(LATEXMK) -pdf -pvc $(NAME)
 
-report:
-	$(LATEX) $(TRNAME).tex
-	$(BIBTEX) $(TRNAME)
-	$(LATEX) $(TRNAME).tex
-	$(LATEX) $(TRNAME).tex
 
 clean:
 	rm -f *.blg *.bbl *.aux *.log *.dvi *.out *.pdf *.snm *.toc *.nav *~
