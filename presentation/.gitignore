@@ -10,5 +10,7 @@
 *.nav
 *.fdb_latexmk
 *.fls
+*.bcf
+*.run.xml
 *~
 tmp
