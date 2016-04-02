@@ -18,6 +18,16 @@
 
 \DeclareGraphicsExtensions{.pdf,.jpg,.png}
 \graphicspath{{figures/}}
+\usepackage{url}
+\usepackage[
+  natbib=true,
+  backend=biber,
+  uniquename=false,
+  style=alphabetic,
+  citestyle=authoryear
+]{biblatex}
+\bibliography{refs}
+%\bibliographystyle{apalike}
 
 
 \title[PowerGraph]{PowerGraph: Distributed Graph-Parallel Computation on Natural Graphs}
@@ -50,6 +60,10 @@
   \input{3-approach}
   \input{4-evaluation}
   \input{5-summary}
+
+  \begin{frame}[allowframebreaks]
+    \printbibliography
+  \end{frame}
 
   \input{6-appendix}
 \end{document}
