@@ -87,7 +87,14 @@
 
 \begin{frame}
   \frametitle{Node Activation}
-  \textbf{TODO:} Everything!
+  \begin{itemize}
+    \item Except for initial activation (of all vertices), activation is always
+          explict in user's vertex program.
+    \item A vertex can only be activated by itself or by one of its neighbors.
+    \item \textbf{Rule:} A vertex program can activate vertices in
+          \textbf{gather()}, \textbf{apply()}, or \textbf{scatter()}, but only
+          on \textit{visible} vertices (i.e.\ vertices that are part of args).
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
