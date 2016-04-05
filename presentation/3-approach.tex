@@ -22,10 +22,11 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{The Key to Graph-Parallel Optimizations}
+  \frametitle{The Key to PowerGraph's Optimizations}
   \centering
-  Parallelize vertex programs but also be able to parallelize their
-  sub-operations: scatter and gather.
+  Parallelize vertex programs as before, but also parallelize their
+  sub-operations, scatter and gather. \textit{(Smaller critical sections!)}
+
   \begin{figure}
     \centering
     \includegraphics[scale=0.37]{gonzalez_osdi_2012_slide_13}
@@ -71,15 +72,29 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Node Activation}
+  \textbf{TODO:} Everything!
+\end{frame}
+
+\begin{frame}
   \frametitle{Sequential Semantics}
   The meaning of a vertex program given the user-defined ops:
   \begin{figure}
     \centering
-    \includegraphics[scale=0.80]{gonzalez_osdi_2012_algorithm_1}
+    \includegraphics[scale=0.78]{gonzalez_osdi_2012_algorithm_1}
     \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
   \end{figure}
 \end{frame}
 
+\begin{frame}
+  \frametitle{\textit{Example:} Greedy Graph Coloring}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{gonzalez_osdi_2012_figure_3b}%
+    \includegraphics[width=0.55\textwidth]{gonzalez_osdi_2012_algorithm_1}
+    \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
+\end{frame}
 
 
 \subsection{Distributing the Graph and Computation}
@@ -102,6 +117,18 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Graph Partitioning Formalization and Algorithms}
+  \begin{itemize}
+    \item The authors formally describe an optimization problem for graph
+          partitioning (balanced $p$-way vertex-cut), and two algorithms for
+          finding approximate solutions (random and greedy).
+    \item The authors argue that the vertex-cut model is ``highly effective''
+          for both power-law graphs and regular graphs.~\cite[OSDI '12]{gonzalez2012powergraph}
+    \item These are not covered in this presentation.
+  \end{itemize}
+\end{frame}
+
 
 \subsection{An Example Vertex Program}
 
@@ -115,18 +142,47 @@
 \end{frame}
 
 
-\subsection{Limitations}
+\subsection{PowerGraph Runtime}
 
 \begin{frame}
-  \frametitle{Limitations of Approach}
+  \frametitle{Three Variants of PowerGraph's Runtime}
   \begin{itemize}
-    \item Static graph topology.
-    \item TODO?
+    \item \textbf{Bulk Synchronous:} Vertex program progress synchronized at
+          both \textit{minor-steps} and \textit{super-steps}.
+    \item \textbf{Asynchronous:} Mutations to graph are immediately visible by
+          subsequent adjacent vertex programs.
+    \item \textbf{Asynchronous Serializable:} \ldots
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-\begin{itemize}
-  \item % TODO What was our solution
-\end{itemize}
+  \frametitle{Asynchronous Serializable}
+  \textbf{Def:} A guarantee of \textit{serializability} is a guarantee that
+    every possible parallel/distributed execution of vertex programs has a
+    corresponding sequential execution.\footnote{\cite[OSDI '12]{gonzalez2012powergraph}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Asynchronous Serializable}
+  \centering
+  Async+S is equivalent to GraphLab's \textit{edge consistency}.
+  \begin{figure}
+    \includegraphics[scale=1.8]{low_vldb_2012_figure_2b}
+    \caption{\cite[VLDB '12]{low2012distributed}}
+  \end{figure}
+\end{frame}
+
+\subsection{One Important Limitation}
+
+\begin{frame}
+  \frametitle{One Important Limitation}
+  \centering
+  \textit{Immutable graph topology.}
+\end{frame}
+
+\subsection{}
+
+\begin{frame}
+  \centering
+  \textbf{\Large Questions?}
 \end{frame}
