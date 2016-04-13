@@ -142,14 +142,37 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Graph Partitioning Formalization and Algorithms}
+  \frametitle{Graph Partitioning Formalization}
   \begin{itemize}
     \item The authors formally describe an optimization problem for graph
-          partitioning (balanced $p$-way vertex-cut), and two algorithms for
-          finding approximate solutions (random and greedy).
+          partitioning, balanced $p$-way vertex-cut
+    \item \textbf{Idea:} Minimize the average number of vertex replicas.
+    \item Minimization of the average number of replicas helps decrease the
+          total storage \textit{and} communication.
     \item The authors argue that the vertex-cut model is ``highly effective''
           for both power-law graphs and regular graphs.~\cite[OSDI '12]{gonzalez2012powergraph}
-    \item These are not covered in this presentation.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Graph Partitioning Algorithms: Random Heuristic}
+  A simple algorithm:
+  \begin{enumerate}
+    \item Randomly assign edges to nodes.
+    \item Replicate vertices as needed.
+    \item Assign one replica as master.
+    \item Others are ghosts.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Graph Partitioning Algorithms: Greedy Heuristic}
+  Loosely speaking, place each edge on that node which minimizes the expected
+  replication given previous edge/vertex assignments.
+  \begin{itemize}
+    \item Sequential
+    \item Coordinated
+    \item Oblivious
   \end{itemize}
 \end{frame}
 
