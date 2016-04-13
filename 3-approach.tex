@@ -78,10 +78,13 @@
 \begin{frame}
   \frametitle{Delta Caching}
   \begin{itemize}
-    \item Might better be called ``cached gather accumulator with corrections.''
+    \item "[A] procedure which allows computation state to be dynamically
+          maintained"\footnote{\cite[OSDI '12]{gonzalez2012powergraph}}
     \item A programmer-directed optimization, useful in some programs.
     \item \textbf{Idea:} When scattering to neighbor, optionally add a
-          correction onto cached gather accumulator.
+          correction onto cached copy of gather accumulator.
+    \item Might better be called \textit{cached gather accumulator with
+          corrections.}
   \end{itemize}
 \end{frame}
 
