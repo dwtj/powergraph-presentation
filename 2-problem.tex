@@ -104,6 +104,59 @@
 \end{frame}
 
 
+\subsection{Analysis of Previous Vertex Program Abstractions}
+
+\begin{frame}
+  \frametitle{Analysis of Previous Vertex Program Abstractions}
+  The authors analyze---under the assumption of power law graphs--both
+  \textit{work imbalance} and \textit{communication overhead} in both Pregel and
+  GraphLab as a consequence of edge cuts. (Only partially discussed here.)
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pregel Message Combiners Effective on Fan-In}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.40]{gonzalez_osdi_2012_slide_22a}
+    \caption{\cite[OSDI '12 Slides]{gonzalez2012powergraph-slides}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pregel Message Combiners Effective on Fan-In}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.40]{gonzalez_osdi_2012_slide_22b}
+    \caption{\cite[OSDI '12 Slides]{gonzalez2012powergraph-slides}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pregel Struggles with Fan-Out: Comms Overhead}
+  \centering
+  \large{\textit{Combiners not applicable on fan-out.}}
+  \begin{figure}
+    \includegraphics[width=0.6\textwidth]{gonzalez_osdi_2012_slide_23}
+    \includegraphics[width=0.4\textwidth]{gonzalez_osdi_2012_figure_9d}
+    \caption{\cite[OSDI '12 Slides]{gonzalez2012powergraph-slides};
+    \cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pregel Struggles with Fan-Out: Work Imbalance}
+  \centering
+  \large
+  \textit{Pregel vertex program execution linear out-edge degree.}
+
+  \begin{figure}
+    \includegraphics{gonzalez_osdi_2012_figure_9b}
+    \caption{\cite[OSDI '12 Slides]{gonzalez2012powergraph-slides};
+    \cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
+\end{frame}
+
+
 \subsection{The Challenges of Processing Power Law Graphs}
 
 \begin{frame}
