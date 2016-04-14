@@ -144,29 +144,53 @@
 \begin{frame}
   \frametitle{Graph Partitioning Formalization}
   \begin{itemize}
-    \item The authors formally describe an optimization problem for graph
-          partitioning, balanced $p$-way vertex-cut
-    \item \textbf{Idea:} Minimize the average number of vertex replicas.
-    \item Minimization of the average number of replicas helps decrease the
-          total storage \textit{and} communication.
-    \item The authors argue that the vertex-cut model is ``highly effective''
-          for both power-law graphs and regular graphs.~\cite[OSDI '12]{gonzalez2012powergraph}
+    \item \textbf{Observation:} Decreasing of the average number of replicas
+          decreases \textit{both} the storage overhead and communication
+          overhead.
+    \item \textbf{Formalization:} Optimization problem for graph partitioning,
+          balanced $p$-way vertex-cut
+    \item \textbf{Formalization:} Parameterized probabilistic models of
+          replication.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Graph Partitioning Algorithms: Random Heuristic}
-  A simple algorithm:
-  \begin{enumerate}
-    \item Randomly assign edges to nodes.
-    \item Replicate vertices as needed.
-    \item Assign one replica as master.
-    \item Others are ghosts.
-  \end{enumerate}
+  \frametitle{$\mathbb{E}$ Replication Varies with $\alpha$ and Number of
+              Machines}
+  \begin{figure}
+    \centering
+    \includegraphics{gonzalez_osdi_2012_figure_6a}
+    \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Graph Partitioning Algorithms: Greedy Heuristic}
+  \frametitle{$\mathbb{E}$ Improvement of V-Cut over E-Cut Varies with $\alpha$
+              and Number of Machines}
+  \begin{figure}
+    \centering
+    \includegraphics{gonzalez_osdi_2012_figure_6b}
+    \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Graph Partitioning Algorithm: Random Heuristic}
+  A simple algorithm to serve as baseline for improvements:
+\begin{lstlisting}
+Randomly assign edges to nodes.
+For each vertex v:
+  Replicate v as needed.
+  Assign one replica of v as master.
+  Other replicas are ghosts.
+\end{lstlisting}
+  This algorithm will probably produce the same replication rates as predicted
+  by model.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Graph Partitioning Algorithm: Greedy Heuristic}
   Loosely speaking, place each edge on that node which minimizes the expected
   replication given previous edge/vertex assignments.
   \begin{itemize}
