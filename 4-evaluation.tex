@@ -44,7 +44,7 @@
 
 \begin{frame}
   \frametitle{\small{Do Improved V-Cut Methods Improve Scaling of Replication
-              Rates? (Twitter)}}
+              Rates? (Twitter Dataset)}}
   \centering
   \begin{figure}
     \includegraphics{gonzalez_osdi_2012_figure_8a}
@@ -53,8 +53,8 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{\small{Do V-Cut Algorithms \textit{Themselves} Scale Well?
-              (Twitter)}}
+  \frametitle{\small Do V-Cut Algorithms \textit{Themselves} Scale Well?
+              (Twitter Dataset)}
   \centering
   \begin{figure}
     \includegraphics{gonzalez_osdi_2012_figure_8b}
@@ -63,5 +63,44 @@
 \end{frame}
 
 \begin{frame}
-  \textbf{TODO:} Include graphs/charts for your evaluation
+  \frametitle{\small Do Improved V-Cut Methods Improve Scaling of User-Op Rates?
+              (Twitter PageRank)}
+  \centering
+  \begin{figure}
+    \includegraphics{gonzalez_osdi_2012_figure_12a}
+    \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
+\end{frame}
+
+
+\subsection{Evaluating the Impact of Serializability Guarantee Mechanism}
+
+\begin{frame}
+  \frametitle{\small Does Serializability Guarantee Cause Weak Scaling? (Coloring Task)}
+  \centering
+  \begin{figure}
+    \includegraphics{gonzalez_osdi_2012_figure_12c}
+    \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\small Does Serializability Guarantee Cause Weak Scaling? (ALS Task)}
+  \centering
+  \textit{Note:} Algorithm is $O(d^3)$
+  \begin{figure}
+    \includegraphics{gonzalez_osdi_2012_figure_13a}
+    \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
+\end{frame}
+
+
+\subsection{Comparing PowerGraph Performance with Other MLDM Systems}
+
+\begin{frame}
+  \frametitle{PowerGraph Performance vs Other MLDM Systems}
+  \begin{figure}
+    \includegraphics[scale=0.95]{gonzalez_osdi_2012_table_2}
+    \caption{\cite[OSDI '12]{gonzalez2012powergraph}}
+  \end{figure}
 \end{frame}
