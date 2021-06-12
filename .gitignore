@@ -4,7 +4,6 @@
 *.log
 *.dvi
 *.out
-*.pdf
 *.snm
 *.toc
 *.nav
